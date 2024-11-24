@@ -181,9 +181,9 @@ texture_scale = 6.0
 
 [node name="Mat" type="Sprite2D" parent="TileMap/Sprite2D4"]
 texture_filter = 1
-position = Vector2(286.001, -111.333)
+position = Vector2(289.836, -115.422)
 rotation = 1.5708
-scale = Vector2(2.66667, 2.66667)
+scale = Vector2(2.79444, 2.46878)
 texture = ExtResource("6_n0dxu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -193,6 +193,6 @@ autoplay = true
 
 [node name="Control" parent="." instance=ExtResource("7_iik5f")]
 offset_left = 9.0
-offset_top = 66.0
+offset_top = 62.0
 offset_right = 49.0
-offset_bottom = 106.0
+offset_bottom = 102.0
