@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bknf1w1ilfgjx"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_2hknr"]
+[ext_resource type="PackedScene" uid="uid://dev88t0b261a3" path="res://scenes/level/tile_map.tscn" id="1_38ara"]
+[ext_resource type="PackedScene" uid="uid://j1vw7xew2g8" path="res://scenes/spawner/spawner.tscn" id="1_ha4ag"]
+[ext_resource type="PackedScene" uid="uid://b7vrrms4swbhq" path="res://scenes/bed/bed.tscn" id="2_4brul"]
+[ext_resource type="PackedScene" uid="uid://b7qvry4cavjlk" path="res://scenes/player/player.tscn" id="2_xsaeg"]
+[ext_resource type="PackedScene" uid="uid://dd6brov4ja76" path="res://scenes/objects/pillow.tscn" id="5_b1tmt"]
+[ext_resource type="AudioStream" uid="uid://qq3sqdo3e1p" path="res://music/pillow game main.mp3" id="7_k8jqq"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="8_m2abq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fip5"]
+size = Vector2(1492, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxcq"]
+size = Vector2(76, 1276)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_2hknr")
+
+[node name="TileMap" parent="." instance=ExtResource("1_38ara")]
+
+[node name="bed" parent="." instance=ExtResource("2_4brul")]
+position = Vector2(635, 341)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(571, -20)
+shape = SubResource("RectangleShape2D_7fip5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(613, 636)
+shape = SubResource("RectangleShape2D_7fip5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16, 118)
+shape = SubResource("RectangleShape2D_pwxcq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1189, 150)
+shape = SubResource("RectangleShape2D_pwxcq")
+
+[node name="spawner" parent="." instance=ExtResource("1_ha4ag")]
+
+[node name="player" parent="." instance=ExtResource("2_xsaeg")]
+position = Vector2(749, 293)
+
+[node name="pillow" parent="." instance=ExtResource("5_b1tmt")]
+position = Vector2(831, 294)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_k8jqq")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 50.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["cam"]]
+position = Vector2(577, 325)
+script = ExtResource("8_m2abq")
+
+[node name="Timer" type="Timer" parent="Camera2D"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]

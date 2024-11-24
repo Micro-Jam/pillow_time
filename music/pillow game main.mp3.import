@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qq3sqdo3e1p"
+path="res://.godot/imported/pillow game main.mp3-c2006510ccb8bbc495736637fd4da2fa.mp3str"
+
+[deps]
+
+source_file="res://music/pillow game main.mp3"
+dest_files=["res://.godot/imported/pillow game main.mp3-c2006510ccb8bbc495736637fd4da2fa.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

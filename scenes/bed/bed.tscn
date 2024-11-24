@@ -1,0 +1,384 @@
+[gd_scene load_steps=26 format=3 uid="uid://b7vrrms4swbhq"]
+
+[ext_resource type="Script" path="res://scenes/bed/bed.gd" id="1_kpnxi"]
+[ext_resource type="Texture2D" uid="uid://loa800htnkm7" path="res://final_assets/pillow/bed.png" id="2_cn27a"]
+[ext_resource type="Texture2D" uid="uid://cshk300bg6rkc" path="res://final_assets/pillow/mat.png" id="2_jht3j"]
+[ext_resource type="Texture2D" uid="uid://beota6wrprtlc" path="res://final_assets/pillow/object_1.png" id="2_ntpr4"]
+[ext_resource type="Texture2D" uid="uid://bt8oulixdn0xl" path="res://final_assets/pillow/char.png" id="3_ayln2"]
+[ext_resource type="Texture2D" uid="uid://k2apwyp75rhe" path="res://final_assets/pillow/side_ob_1.png" id="6_ldplc"]
+[ext_resource type="PackedScene" uid="uid://ck4msjikth33n" path="res://scenes/objects/rack.tscn" id="6_pa5vw"]
+[ext_resource type="Texture2D" uid="uid://bnuq4nveva80v" path="res://final_assets/pillow/table.png" id="7_iqx5y"]
+[ext_resource type="Texture2D" uid="uid://hrjm0waq0aw1" path="res://final_assets/pillow/up_chair.png" id="7_lxwbf"]
+[ext_resource type="Texture2D" uid="uid://cc13uge87gsyv" path="res://final_assets/pillow/side_chair.png" id="8_hvfi4"]
+[ext_resource type="Texture2D" uid="uid://cq8kqvo3kbra1" path="res://final_assets/pillow/left,png.png" id="10_6rdm3"]
+[ext_resource type="Texture2D" uid="uid://c10tmgfleotsj" path="res://final_assets/pillow/lamp.png" id="11_rpssi"]
+[ext_resource type="Texture2D" uid="uid://hwpasyljl342" path="res://final_assets/pillow/sofa.png" id="13_5polq"]
+[ext_resource type="Texture2D" uid="uid://b3ivy5aof2k6n" path="res://final_assets/pillow/light.png" id="14_34pc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4lje8"]
+radius = 161.078
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ikrn"]
+radius = 161.0
+height = 322.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h7ug"]
+size = Vector2(45, 46.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qknbd"]
+size = Vector2(35, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgarl"]
+size = Vector2(425, 182.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oafhn"]
+size = Vector2(13.7509, 245.833)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56xpj"]
+size = Vector2(15.625, 40.9375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6xy"]
+size = Vector2(135, 77.5)
+
+[sub_resource type="Animation" id="Animation_y4w6k"]
+resource_name = "gloom"
+length = 10.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D3:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D4:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D2:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.0]
+}
+
+[sub_resource type="Animation" id="Animation_y56na"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D3:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D4:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D2:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7wkt6"]
+_data = {
+"RESET": SubResource("Animation_y56na"),
+"gloom": SubResource("Animation_y4w6k")
+}
+
+[node name="bed" type="Node2D" groups=["bed"]]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_kpnxi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(7, 7)
+texture = ExtResource("2_jht3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_cn27a")
+
+[node name="bed area" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bed area"]
+shape = SubResource("CircleShape2D_4lje8")
+
+[node name="enemy_hurt" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hurt"]
+shape = SubResource("CapsuleShape2D_3ikrn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="box" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-357, -54)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ntpr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-361.25, -48.125)
+shape = SubResource("RectangleShape2D_5h7ug")
+
+[node name="chair" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(435, -38)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ayln2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(435, -37.5)
+shape = SubResource("RectangleShape2D_qknbd")
+
+[node name="Rack" parent="StaticBody2D" instance=ExtResource("6_pa5vw")]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-17.5, -322.5)
+shape = SubResource("RectangleShape2D_jgarl")
+
+[node name="SideOb1" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(625, -330)
+rotation = 6.28319
+scale = Vector2(3, 3)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb4" type="Sprite2D" parent="StaticBody2D/SideOb1"]
+texture_filter = 1
+position = Vector2(-3.05176e-05, 14.1667)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb5" type="Sprite2D" parent="StaticBody2D/SideOb1/SideOb4"]
+texture_filter = 1
+position = Vector2(3.05176e-05, 12.9167)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb2" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(625, -230)
+rotation = 6.28319
+scale = Vector2(3, 3)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb3" type="Sprite2D" parent="StaticBody2D/SideOb2"]
+texture_filter = 1
+position = Vector2(0, 16.6667)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb6" type="Sprite2D" parent="StaticBody2D/SideOb2/SideOb3"]
+texture_filter = 1
+position = Vector2(-3.05176e-05, 17.9167)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb3" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(629.75, 39.75)
+rotation = 6.28319
+scale = Vector2(3, 3)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb4" type="Sprite2D" parent="StaticBody2D/SideOb3"]
+texture_filter = 1
+position = Vector2(-3.05176e-05, 14.1667)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb5" type="Sprite2D" parent="StaticBody2D/SideOb3/SideOb4"]
+texture_filter = 1
+position = Vector2(3.05176e-05, 12.9167)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb4" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(629.75, 139.75)
+rotation = 6.28319
+scale = Vector2(3, 3)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb3" type="Sprite2D" parent="StaticBody2D/SideOb4"]
+texture_filter = 1
+position = Vector2(0, 16.6667)
+texture = ExtResource("6_ldplc")
+
+[node name="SideOb6" type="Sprite2D" parent="StaticBody2D/SideOb4/SideOb3"]
+texture_filter = 1
+position = Vector2(-3.05176e-05, 17.9167)
+texture = ExtResource("6_ldplc")
+
+[node name="SideChair" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(510, -3.75)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("8_hvfi4")
+
+[node name="Table" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(435, 18.75)
+scale = Vector2(2, 2)
+texture = ExtResource("7_iqx5y")
+
+[node name="UpChair" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(438.75, 26.25)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("7_lxwbf")
+
+[node name="Left,png" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(368.75, -3.75)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("10_6rdm3")
+
+[node name="upper_lamp2" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-706.25, 256.25)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("11_rpssi")
+
+[node name="upper_lamp3" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(440, 271.25)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("11_rpssi")
+
+[node name="upper_lamp4" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(458.75, -315)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("11_rpssi")
+
+[node name="upper_lamp" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-696.25, -317.5)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("11_rpssi")
+
+[node name="sofa" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-653.75, -3.75)
+scale = Vector2(4, 4)
+texture = ExtResource("13_5polq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(631.875, -36.25)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_oafhn")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-680, -8.125)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_56xpj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(438.75, 1.25)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kq6xy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-707.5, 220)
+scale = Vector2(10, 10)
+range_z_min = -4096
+texture = ExtResource("14_34pc4")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-695, -351.25)
+scale = Vector2(10, 10)
+energy = 5.0
+range_z_min = -4096
+texture = ExtResource("14_34pc4")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(442.5, 236.25)
+scale = Vector2(10, 10)
+energy = 5.0
+range_z_min = -4096
+texture = ExtResource("14_34pc4")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(458.75, -353.75)
+scale = Vector2(10, 10)
+energy = 5.0
+range_z_min = -4096
+texture = ExtResource("14_34pc4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7wkt6")
+}
+speed_scale = 0.2
+
+[connection signal="body_entered" from="bed area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enemy_hurt" to="." method="_on_enemy_hurt_body_entered"]

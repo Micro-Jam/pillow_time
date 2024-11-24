@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd6brov4ja76"]
+
+[ext_resource type="Script" path="res://scenes/objects/pillow.gd" id="1_o2wf1"]
+[ext_resource type="Texture2D" uid="uid://ccctn5g0oe017" path="res://final_assets/pillow/pillow.png" id="2_oqslk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2oega"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ql7q6"]
+radius = 52.0096
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrfbu"]
+size = Vector2(38, 28)
+
+[node name="pillow" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 5
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_o2wf1")
+throw_vel = 500
+
+[node name="Coin" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -3)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_oqslk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2oega")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ql7q6")
+
+[node name="hit_box" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+shape = SubResource("RectangleShape2D_mrfbu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]

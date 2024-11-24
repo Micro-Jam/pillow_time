@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck4msjikth33n"]
+
+[ext_resource type="Texture2D" uid="uid://c3dgx0u7fodse" path="res://final_assets/pillow/rack.png" id="1_elwon"]
+
+[node name="Rack" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-146.25, -330)
+scale = Vector2(3, 3)
+texture = ExtResource("1_elwon")
+
+[node name="Rack2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(85.4167, 0.833344)
+texture = ExtResource("1_elwon")
+
+[node name="Rack3" type="Sprite2D" parent="Rack2"]
+texture_filter = 1
+position = Vector2(-42.0833, -0.833359)
+texture = ExtResource("1_elwon")

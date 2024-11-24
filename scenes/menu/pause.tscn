@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmvq007k4idr6"]
+
+[ext_resource type="PackedScene" uid="uid://dev88t0b261a3" path="res://scenes/level/tile_map.tscn" id="1_oi8w3"]
+[ext_resource type="Script" path="res://scenes/menu/pause.gd" id="1_qph4g"]
+[ext_resource type="Texture2D" uid="uid://c10tmgfleotsj" path="res://final_assets/pillow/lamp.png" id="2_ahatg"]
+[ext_resource type="Texture2D" uid="uid://bql0pmiif3ege" path="res://final_assets/ui/continue.png" id="2_iy0ky"]
+[ext_resource type="Texture2D" uid="uid://b3ivy5aof2k6n" path="res://final_assets/pillow/light.png" id="3_e7c7d"]
+[ext_resource type="Texture2D" uid="uid://bcmljjxs71vlp" path="res://final_assets/ui/gui.png" id="4_aqo7i"]
+[ext_resource type="FontFile" uid="uid://b8pdttjq2ao4v" path="res://final_assets/fonts/new_font_file.tres" id="5_0mx76"]
+[ext_resource type="Texture2D" uid="uid://c1l55t3a2q6fj" path="res://final_assets/ui/exit.png" id="7_7fcpw"]
+[ext_resource type="AudioStream" uid="uid://cxjc036rb1oo5" path="res://music/pillow game UI.mp3" id="9_hmgp3"]
+
+[node name="pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qph4g")
+
+[node name="TileMap" parent="." instance=ExtResource("1_oi8w3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(85, 88)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ahatg")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D"]
+position = Vector2(0.666667, -16)
+energy = 2.0
+texture = ExtResource("3_e7c7d")
+texture_scale = 6.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(1059, 97)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ahatg")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D2"]
+position = Vector2(0, -16.6667)
+energy = 2.0
+texture = ExtResource("3_e7c7d")
+texture_scale = 6.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(1036, 570)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ahatg")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D3"]
+position = Vector2(0, -16.6667)
+energy = 2.0
+texture = ExtResource("3_e7c7d")
+texture_scale = 6.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(92, 548)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ahatg")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D4"]
+position = Vector2(0, -16.6667)
+energy = 2.0
+texture = ExtResource("3_e7c7d")
+texture_scale = 6.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 488.0
+offset_top = 231.0
+offset_right = 744.0
+offset_bottom = 485.0
+texture = ExtResource("4_aqo7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -10.0
+offset_top = -56.0
+offset_right = 96.0
+offset_bottom = -16.0
+scale = Vector2(3, 3)
+theme_override_fonts/normal_font = ExtResource("5_0mx76")
+bbcode_enabled = true
+text = "[wave amp=30 freq=2]Paused"
+
+[node name="exit" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 142.0
+offset_right = 112.0
+offset_bottom = 158.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("7_7fcpw")
+
+[node name="restart" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 86.0
+offset_right = 107.0
+offset_bottom = 102.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_iy0ky")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_hmgp3")
+autoplay = true
+
+[connection signal="pressed" from="NinePatchRect/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="NinePatchRect/restart" to="." method="_on_restart_pressed"]

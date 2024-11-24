@@ -1,0 +1,198 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2su3o8pmpn16"]
+
+[ext_resource type="PackedScene" uid="uid://dev88t0b261a3" path="res://scenes/level/tile_map.tscn" id="1_4tg7a"]
+[ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_vbj5b"]
+[ext_resource type="Texture2D" uid="uid://c10tmgfleotsj" path="res://final_assets/pillow/lamp.png" id="2_0evtn"]
+[ext_resource type="PackedScene" uid="uid://ck4msjikth33n" path="res://scenes/objects/rack.tscn" id="3_a0tg0"]
+[ext_resource type="Texture2D" uid="uid://b3ivy5aof2k6n" path="res://final_assets/pillow/light.png" id="3_djcrp"]
+[ext_resource type="Texture2D" uid="uid://cshk300bg6rkc" path="res://final_assets/pillow/mat.png" id="6_n0dxu"]
+[ext_resource type="PackedScene" uid="uid://bpl0rlv80jubl" path="res://scenes/menu/control.tscn" id="7_iik5f"]
+[ext_resource type="AudioStream" uid="uid://cxjc036rb1oo5" path="res://music/pillow game UI.mp3" id="7_ost7b"]
+
+[sub_resource type="Animation" id="Animation_31wjm"]
+length = 1.00002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Sprite2D/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap/Sprite2D2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMap/Sprite2D3/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMap/Sprite2D4/PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_0ga6n"]
+resource_name = "gloom"
+length = 3.20002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap/Sprite2D/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap/Sprite2D2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMap/Sprite2D3/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMap/Sprite2D4/PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hljgy"]
+_data = {
+"RESET": SubResource("Animation_31wjm"),
+"gloom": SubResource("Animation_0ga6n")
+}
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_vbj5b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hljgy")
+}
+
+[node name="TileMap" parent="." instance=ExtResource("1_4tg7a")]
+
+[node name="Rack" parent="TileMap" instance=ExtResource("3_a0tg0")]
+position = Vector2(478, 78)
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(85, 88)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0evtn")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D"]
+position = Vector2(0.666664, -12.6667)
+energy = 5.0
+texture = ExtResource("3_djcrp")
+texture_scale = 6.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(1020, 86)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0evtn")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D2"]
+position = Vector2(0, -16)
+energy = 5.0
+texture = ExtResource("3_djcrp")
+texture_scale = 6.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(982, 528)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0evtn")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D3"]
+position = Vector2(0, -16)
+energy = 5.0
+texture = ExtResource("3_djcrp")
+texture_scale = 6.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="TileMap"]
+texture_filter = 1
+position = Vector2(146, 545)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0evtn")
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D4"]
+position = Vector2(0, -16)
+energy = 5.0
+texture = ExtResource("3_djcrp")
+texture_scale = 6.0
+
+[node name="Mat" type="Sprite2D" parent="TileMap/Sprite2D4"]
+texture_filter = 1
+position = Vector2(286.001, -111.333)
+rotation = 1.5708
+scale = Vector2(2.66667, 2.66667)
+texture = ExtResource("6_n0dxu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 23)
+stream = ExtResource("7_ost7b")
+autoplay = true
+
+[node name="Control" parent="." instance=ExtResource("7_iik5f")]
+offset_left = 9.0
+offset_top = 66.0
+offset_right = 49.0
+offset_bottom = 106.0
