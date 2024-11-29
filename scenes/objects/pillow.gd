@@ -39,6 +39,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
-	player.health +=5
+	player.health +=2
 	cam.shake(1,1)
 	body.queue_free()

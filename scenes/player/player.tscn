@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b7qvry4cavjlk"]
+[gd_scene load_steps=27 format=3 uid="uid://b7qvry4cavjlk"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_01qcx"]
 [ext_resource type="Texture2D" uid="uid://ctw7pqcen2q63" path="res://final_assets/player/idle+hands1.png" id="2_cn5cg"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cre2vjaax12y1" path="res://final_assets/ui/bar_emp.png" id="5_t1nlr"]
 [ext_resource type="Texture2D" uid="uid://j6bsgcwq3jof" path="res://final_assets/ui/bar_fill.png" id="6_efmwu"]
 [ext_resource type="Texture2D" uid="uid://bja3iw6vn3ta" path="res://final_assets/ui/player.png" id="7_4evnu"]
+[ext_resource type="Texture2D" uid="uid://fbgw58p6cybn" path="res://final_assets/ui/left.png" id="8_eio6t"]
+[ext_resource type="Texture2D" uid="uid://b5ml2ew3y2qm2" path="res://final_assets/ui/pick.png" id="9_8sroo"]
+[ext_resource type="Texture2D" uid="uid://dlscujv8ihjnt" path="res://final_assets/ui/throw.png" id="10_5t7rf"]
+[ext_resource type="Texture2D" uid="uid://c6vxyjnfwxpar" path="res://final_assets/ui/men.png" id="11_ki6kb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1byp"]
 atlas = ExtResource("2_cn5cg")
@@ -127,6 +131,7 @@ offset_bottom = 75.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 48.0
 offset_top = -48.0
 offset_right = 88.0
@@ -137,6 +142,7 @@ expand_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 119.0
 offset_top = -18.0
 offset_right = 619.0
@@ -144,7 +150,61 @@ offset_bottom = 2.0
 value = 100.0
 texture_under = ExtResource("5_t1nlr")
 texture_progress = ExtResource("6_efmwu")
-texture_progress_offset = Vector2(0, 2.695)
+texture_progress_offset = Vector2(-2.205, 2.695)
+
+[node name="down" type="TouchScreenButton" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(88, 556)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_eio6t")
+action = "down"
+
+[node name="up" type="TouchScreenButton" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(144, 417)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_eio6t")
+action = "up"
+
+[node name="right" type="TouchScreenButton" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(189, 522)
+rotation = 3.14159
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_eio6t")
+action = "right"
+
+[node name="left" type="TouchScreenButton" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(40, 464)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_eio6t")
+action = "left"
+
+[node name="pick" type="TouchScreenButton" parent="CanvasLayer/Control"]
+modulate = Color(1, 0, 1, 1)
+texture_filter = 1
+position = Vector2(933, 479)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("9_8sroo")
+action = "pick"
+
+[node name="throw" type="TouchScreenButton" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 0, 1)
+texture_filter = 1
+position = Vector2(982, 478)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("10_5t7rf")
+action = "throw"
+
+[node name="pause" type="TouchScreenButton" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(-30, -45)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("11_ki6kb")
+action = "pause"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
